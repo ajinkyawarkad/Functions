@@ -1,0 +1,39 @@
+[
+    {
+      'First Name': 'Ajinkya1',
+      'Last Name': 'Grimm',
+      Email: 'saimon@devdactic.com',
+      phone: '2570876538'
+    },
+
+    {
+      'First Name': 'Ajinkya2',
+      'Last Name': 'Grimm',
+      Email: 'saimon@devdactic.com',
+      phone: '2570876538'
+    },
+    {
+      'First Name': 'ajinkya3',
+      'Last Name': 'Grimm',
+      Email: 'saimon@devdactic.com',
+      phone: '2570876538'
+    },
+    {
+      'First Name': 'Simon',
+      'Last Name': 'Grimm',
+      Email: 'saimon@devdactic.com',
+      phone: '2570876538'
+    },
+    {
+      'First Name': 'Simon',
+      'Last Name': 'Grimm',
+      Email: 'saimon@devdactic.com',
+      phone: '2570876538'
+    },
+    {
+      'First Name': 'Simon',
+      'Last Name': 'Grimm',
+      Email: 'saimon@devdactic.com',
+      phone: '2570876538'
+    }
+  ]

@@ -1,14 +1,123 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Team details</ion-title>
   </ion-navbar>
 </ion-header>
 
+
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v3">docs</a> will be your guide.
-  </p>
+  <ion-segment [(ngModel)]="Segments" value="2" mode="ios" >
+    <ion-segment-button (ionSelect)="Segments = 1" value="1">
+        Add
+    </ion-segment-button>
+    <ion-segment-button (ionSelect)="Segments = 2" value="2" >
+        Display
+    </ion-segment-button>
+    <ion-segment-button (ionSelect)="Segments = 3" value="3" >
+      Licenses
+  </ion-segment-button>
+</ion-segment>
+
+
+<div [ngSwitch]="Segments">
+ <br>
+ <div *ngSwitchCase="1" >
+  <div class="contaier-login">
+  <ion-grid>
+   <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-input type="text" required placeholder="First Name" required [(ngModel)]="employee.name" ></ion-input>
+      </ion-item>
+      <br />
+   
+      <ion-item>
+        <ion-input type="text" required placeholder="Last Name" required [(ngModel)]="employee.last" ></ion-input>
+      </ion-item>
+       <br />
+   
+       <ion-item>
+           <ion-input type="text" required placeholder="Email" required [(ngModel)]="employee.email"></ion-input>
+       </ion-item> 
+       <br />
+
+       
+   
+       <ion-item>
+           <ion-label>Role</ion-label>
+           <ion-select placeholder="Select One" required [(ngModel)]="employee.role">
+             <ion-option >Manager</ion-option>
+             <ion-option >Sale Representative</ion-option>      
+           </ion-select>
+       </ion-item>        
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <button ion-button round full color="primary" (click)="sendData(employee)" >
+          Invite
+      </button>
+      </ion-col>
+    </ion-row>
+
+  </ion-grid>
+  </div>
+</div>
+
+
+      <div *ngSwitchCase="2"  > 
+        <table>
+          <thead>
+          <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Role</th>
+            <th>Email</th>
+            <th>Action</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr  *ngFor="let product of products  | async">
+            <td style="text-decoration: underline;color: blue;" (click)="edit(product)">{{product.first_name}}</td>
+            <td>{{product.last_name}}</td>
+            <td>{{product.role}}</td>
+            <td>{{product.email}}</td>
+            <td> <ion-icon name="trash" class="deleteicon" (click)="showPopup(product.uid); deleteItem1(product.uid)"></ion-icon></td>
+          </tr>
+          </tbody>
+        </table> 
+      </div>
+
+      <div *ngSwitchCase="3" >
+        <table>
+          <thead>
+          <tr>
+            <th>No. of Licenses</th>
+            <th>Price</th>
+            <th>Total Price</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td>10</td>
+            <td>6</td>
+            <td>76</td>
+          </tr>
+          <tr> 
+            <td>89</td>
+            <td>7</td>
+            <td>78</td>
+            
+          </tr>
+        
+          </tbody>
+        </table> 
+      </div>
+
+</div>
+
 </ion-content>
