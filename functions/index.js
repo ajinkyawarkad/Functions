@@ -66,9 +66,9 @@ exports.createTen  = functions.https.onRequest((req, res) => {
 
 //-------------------> TimeFunction <--------------------------
 
-exports.scheduledFunctionCrontab =
-functions.pubsub.schedule('15 14 * * *').onRun((context) => {
-    console.log('This will be run every day at 11:05 AM UTC!');
+exports.timerFunction =
+functions.pubsub.schedule('16 35 * * *').timeZone('India Standard Time').onRun((context) => {
+   
     admin.firestore().collection('Company').doc('Timer').set({
       ran:new Date(),
       ranb:true,
