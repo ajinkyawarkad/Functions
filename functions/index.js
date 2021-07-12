@@ -80,10 +80,6 @@ functions.pubsub.schedule('16 35 * * *').timeZone('India Standard Time').onRun((
 
 //-------------------> SendMailFunction <--------------------------
 
-const CLIENT_ID = '1017760632379-jl3t0np9uh62o9vma0anlucpm009a334.apps.googleusercontent.com';
-const CLEINT_SECRET = '34l40PnXcO_FjK2c0_wYiMrV';
-const REDIRECT_URI = 'https://developers.google.com/oauthplayground';
-const REFRESH_TOKEN = '1//04p71w8w_VSZrCgYIARAAGAQSNwF-L9Ir9SmdBfVuEf9UR3c0lnBRTYxQ7TL_znJWd8LIuiPJ6DIpp3LebkhY5BLB0Az5soKpD9c';
 
 const oAuth2Client = new google.auth.OAuth2(
     CLIENT_ID,
